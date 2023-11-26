@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.module.category" id="library_system_access">
+    <field name="name">School Management</field>
+    <field name="sequence">1</field>
+    </record>
+
+    <record id="group_admin" model="res.groups">
+        <field name="name">Admin Perpustakaan</field>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]" />
+        <field name="category_id" ref="library_system_access" />
+    </record>
+
+    <record id="group_murid" model="res.groups">
+        <field name="name">Murid</field>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]" />
+        <field name="category_id" ref="library_system_access" />
+    </record>
+
+</odoo>

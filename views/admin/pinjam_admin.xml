@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="pinjam_action" model="ir.actions.act_window">
+    <field name="name">pinjam</field>
+    <field name="res_model">library_system.pinjam</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <record id="ls_pinjam_view_tree" model="ir.ui.view">
+    <field name="name">pinjam</field>
+    <field name="model">library_system.pinjam</field>
+    <field name="arch" type="xml">
+      <tree string="pinjam">
+        <field name="id"></field>
+        <field name="member"></field>
+        <field name="book_id"></field>
+      </tree>
+    </field>
+  </record>
+
+  <record id="ls_pinjam_view_form" model="ir.ui.view">
+    <field name="name">library_system.pinjam.view.form</field>
+    <field name="model">library_system.pinjam</field>
+    <field name="arch" type="xml">
+      <form>
+        <header>
+          <field name="status_pinjam" widget="statusbar"
+            statusbar_visible="rancangan, pinjam, sudah_kembali" />
+          <button type="object" name="pinjam_button" string="Pinjam" />
+          <button type="object" name="selesai_button" string="Pengembalian" />
+        </header>
+        <sheet>
+          <group col='2'>
+            <group string="Informasi">
+              <field name="create_date" string="Tanggal Dibuat" style="width:50%" readonly='1' />
+              <field name="id" string="ID Pinjam" style="width:50%" />
+              <field name="member" style="width:50%" />
+              <field name="admin_perpus" style="width:50%" />
+            </group>
+
+            <group string="Tentang Buku">
+              <field name="cover" widget="image" />
+              <field name="book_id" />
+              <field name="author" />
+              <field name="deadline" />
+            </group>
+          </group>
+        </sheet>
+        <div class="oe_chatter">
+          <field name="message_follower_ids" widget="mail_followers" />
+          <field name="message_ids" widget="mail_thread" />
+        </div>
+      </form>
+    </field>
+  </record>
+
+</odoo>

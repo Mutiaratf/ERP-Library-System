@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="publisher_action" model="ir.actions.act_window">
+    <field name="name">publisher</field>
+    <field name="res_model">library_system.publisher</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <record id="ls_publisher_view_tree" model="ir.ui.view">
+    <field name="name">publisher</field>
+    <field name="model">library_system.publisher</field>
+    <field name="arch" type="xml">
+      <tree string="publisher">
+        <field name="publisher_name"></field>
+      </tree>
+    </field>
+  </record>
+
+  <record id="ls_publisher_view_form" model="ir.ui.view">
+    <field name="name">library_system.publisher.view.form</field>
+    <field name="model">library_system.publisher</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group>
+            <field name="id" string="ID Penerbit"></field>
+            <field name="publisher_name"></field>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+</odoo>

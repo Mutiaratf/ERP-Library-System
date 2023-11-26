@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="book_action" model="ir.actions.act_window">
+    <field name="name">Book</field>
+    <field name="res_model">library_system.book</field>
+    <field name="view_mode">tree,form,kanban</field>
+  </record>
+
+  <record id="model_name_view_kanban" model="ir.ui.view">
+    <field name="name">book.view.kanban</field>
+    <field name="model">library_system.book</field>
+    <field name="arch" type="xml">
+      <kanban>
+        <field name="image" options="{'class': 'oe-kanban-global-click'}"></field>
+        <field name="id"></field>
+        <templates>
+          <t t-name="kanban-box">
+            <div t-attf-class="oe-kanban-global-click">
+              <div class="o_kanban_image">
+                <img alt="Cover Buku" t-attf-src="kanban_image('library_system.book', 'image', record.id.raw_value)" />
+
+              </div>
+              <div class="oe-kanban-details">
+                <strong>
+                  <field name="title_book"></field>
+                </strong>
+              </div>
+            </div>
+
+          </t>
+        </templates>
+      </kanban>
+    </field>
+  </record>
+  <record id="ls_book_view_tree" model="ir.ui.view">
+    <field name="name">Book</field>
+    <field name="model">library_system.book</field>
+    <field name="arch" type="xml">
+      <tree string="book">
+        <field name="title_book"></field>
+        <field name="publisher"></field>
+      </tree>
+    </field>
+  </record>
+
+  <record id="ls_book_view_form" model="ir.ui.view">
+    <field name="name">library_system.book.view.form</field>
+    <field name="model">library_system.book</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group col="2">
+            <group string="Tentang Buku">
+              <field name="image" widget="image"></field>
+            </group>
+            <group string="">
+              <field name="number_inventaris"></field>
+              <field name="title_book"></field>
+              <field name="author"></field>
+              <field name="tahun_terbit"></field>
+              <field name="publisher"></field>
+              <field name="isbn"></field>
+            </group>
+          </group>
+        
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+</odoo>

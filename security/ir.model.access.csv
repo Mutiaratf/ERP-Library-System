@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ls_book_admin,access_ls_book_admin,model_library_system_book,base.group_user,1,1,1,1
+access_ls_member_admin,access_ls_member_admin,model_library_system_member,base.group_user,1,1,1,1
+access_ls_author_admin,access_ls_author_admin,model_library_system_author,base.group_user,1,1,1,1
+access_ls_publisher_admin,access_ls_publisher_admin,model_library_system_publisher,base.group_user,1,1,1,1
+access_ls_pinjam_admin,access_ls_pinjam_admin,model_library_system_pinjam,base.group_user,1,1,1,1
+access_ls_pengembalian_admin,access_ls_pengembalian_admin,model_library_system_pengembalian,base.group_user,1,1,1,1

@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+  <data>
+    <menuitem
+      id="library_system"
+      name="LS" web_icon="school_management,static/description/icon.png"
+    />
+
+    <menuitem
+      id="ls_book"
+      name="Book"
+      parent="library_system"
+      sequence="1"
+      action="book_action" />
+
+    <menuitem
+      id="ls_pinjam"
+      name="Pinjam"
+      parent="library_system"
+      sequence="2"
+      action="pinjam_action" />
+
+    <menuitem
+      id="ls_pengembalian"
+      name="Pengembalian"
+      parent="library_system"
+      sequence="3"
+      action="pengembalian_action" />
+
+    <menuitem
+      id="ls_config"
+      parent="library_system"
+      name="Config"
+      sequence="4" />
+
+    <menuitem
+      id="ls_member"
+      name="Anggota"
+      parent="ls_config"
+      action="member_action" />
+
+
+    <menuitem
+      id="ls_publisher"
+      name="Penerbit"
+      parent="ls_config"
+      action="publisher_action" />
+
+    <menuitem
+      id="ls_author"
+      name="Penulis"
+      parent="ls_config"
+      action="author_action" />
+      
+  </data>
+</odoo>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="pengembalian_action" model="ir.actions.act_window">
+    <field name="name">pengembalian</field>
+    <field name="res_model">library_system.pengembalian</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <record id="ls_pengembalian_view_tree" model="ir.ui.view">
+    <field name="name">pengembalian</field>
+    <field name="model">library_system.pengembalian</field>
+    <field name="arch" type="xml">
+      <tree string="pengembalian">
+        <field name="book"></field>
+        <field name="member"></field>
+      </tree>
+    </field>
+  </record>
+
+  <record id="ls_pengembalian_view_form" model="ir.ui.view">
+    <field name="name">library_system.pengembalian.view.form</field>
+    <field name="model">library_system.pengembalian</field>
+    <field name="arch" type="xml">
+      <form>
+        <header>
+          <field name="status_pengembalian" widget="statusbar"
+            statusbar_visible="rancangan, pengembalian" />
+          <button type="object" name="selesai_button" string="selesai" />
+        </header>
+        <sheet>
+          <group col='2'>
+            <group string="Informasi">
+              <field name="create_date" string="Tanggal Kembali" style="width:50%" readonly='1' />
+              <field name="admin_perpus" style="width:50%" readonly='1' />
+            </group>
+
+            <group string="Tentang Buku">
+              <field name="cover" widget="image" />
+              <field name="book" />
+              <field name="member" />
+              <field name="tgl_pinjam" />
+              <field name="deadline" />
+            </group>
+          </group>
+          <group string="Keterangan">
+            <field name="ket_deadline"></field>
+            <field name="ket_fisik"></field>
+            <field name="ket_denda" placeholder="Jika tidak ada denda kosongkan"></field>
+          </group>
+        </sheet>
+        <div class="oe_chatter">
+          <field name="message_follower_ids" widget="mail_followers" />
+          <field name="message_ids" widget="mail_thread" />
+        </div>
+      </form>
+    </field>
+  </record>
+
+</odoo>
